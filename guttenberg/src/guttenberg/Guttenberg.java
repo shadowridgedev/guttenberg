@@ -7,9 +7,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 public class Guttenberg {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
 
 		String path = args[0];
@@ -44,7 +47,11 @@ public class Guttenberg {
 				Path local = Paths.get(GuttenbergPath+current.getName());
 				Files.copy(current.toPath(),local , REPLACE_EXISTING);
 				Book book = Guttenberg.CreateGuttenbergBook(current);
-				metadata = helper.GetBookMetadata(current.toString());
+				metadata = helper.GetBookMetadata(book.text);
+				System.out.println(current.getPath() + "    " + current.getPath());
+				 System.out.println(Arrays.asList(metadata)); // method 1
+				
+				
 				// add own metadata
 				book = helper.addMetadata(book, metadata);
 						

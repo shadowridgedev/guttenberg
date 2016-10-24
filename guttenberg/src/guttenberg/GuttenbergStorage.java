@@ -1,11 +1,10 @@
 package guttenberg;
 
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Date;
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class GuttenbergStorage {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";

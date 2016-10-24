@@ -5,132 +5,107 @@ import java.io.File;
 public class Book {
 	Integer key;
 	String path = "";
-	String Name = "";
-	String Author = "";
+	String name = "";
+	String author = "";
 	String date ="";
 	String title = "";
 	String text = "";
-	File file = null;;
-	/**
-	 * @param date
-	 *            the date to set
-	 */
-	public void setDate(String date) {
-		this.date = date;
-	}
-
-
-	/**
-	 * @return the file
-	 */
-	public File getFile() {
-		return file;
-	}
-
-	/**
-	 * @param file
-	 *            the file to set
-	 */
-	public void setFile(File file) {
-		this.file = file;
-	}
-
+	File file = null;
 	/**
 	 * @return the key
 	 */
 	public Integer getKey() {
 		return key;
 	}
-
 	/**
-	 * @param key
-	 *            the key to set
+	 * @param key the key to set
 	 */
 	public void setKey(Integer key) {
 		this.key = key;
 	}
-
 	/**
 	 * @return the path
 	 */
 	public String getPath() {
 		return path;
 	}
-
 	/**
-	 * @param path
-	 *            the path to set
+	 * @param path the path to set
 	 */
 	public void setPath(String path) {
 		this.path = path;
 	}
-
 	/**
 	 * @return the name
 	 */
 	public String getName() {
-		return Name;
+		return name;
 	}
-
 	/**
-	 * @param name
-	 *            the name to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-
 	/**
 	 * @return the author
 	 */
 	public String getAuthor() {
-		return Author;
+		return author;
 	}
-
 	/**
-	 * @param author
-	 *            the author to set
+	 * @param author the author to set
 	 */
 	public void setAuthor(String author) {
-		Author = author;
+		this.author = author;
 	}
-
-
 	/**
 	 * @return the date
 	 */
 	public String getDate() {
 		return date;
 	}
-
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(String date) {
+		this.date = date;
+	}
 	/**
 	 * @return the title
 	 */
 	public String getTitle() {
 		return title;
 	}
-
 	/**
-	 * @param title
-	 *            the title to set
+	 * @param title the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 	/**
 	 * @return the text
 	 */
 	public String getText() {
 		return text;
 	}
-
 	/**
-	 * @param text
-	 *            the text to set
+	 * @param text the text to set
 	 */
 	public void setText(String text) {
 		this.text = text;
 	}
-
+	/**
+	 * @return the file
+	 */
+	public File getFile() {
+		return file;
+	}
+	/**
+	 * @param file the file to set
+	 */
+	public void setFile(File file) {
+		this.file = file;
+	};
+	
 }
