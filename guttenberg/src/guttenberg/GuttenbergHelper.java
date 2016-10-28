@@ -2,19 +2,37 @@ package guttenberg;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.BreakIterator;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class GuttenbergHelper {
 	int GuttenbergFiles = 0;
 	int NotGuttenbergFiles = 0;
 	int count = 0;
+	private ArrayList<String> removetext = new ArrayList<String>();
+
 	// ArrayList<String> checklist = new ArrayList<String> ();
 
-	GuttenbergHelper() {
+	GuttenbergHelper(String GuttenbergBase) throws IOException {
 
+		String GuttenbergPath = GuttenbergBase + "\\Guttenberg\\";
+		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
+		String RemoveText = GuttenbergBase + "\\RemoveText\\";
+
+		String[] paths = new File(RemoveText).list();
+		if (paths != null) {
+			for (String remove : paths) {
+				Path path = Paths.get(RemoveText+remove);
+
+				removetext.add(new String(Files.readAllBytes(path)));
+			}
+		}
 	}
 
 	boolean isGuttenberg(File current) throws FileNotFoundException {
@@ -66,35 +84,8 @@ public class GuttenbergHelper {
 		scanner.close();
 		return false;
 	}
-	private static String extractTitle(final String excerpt, int maxLen) {
-	    if (TextUtils.isEmpty(excerpt))
-	        return null;
 
-	    if (excerpt.length() < maxLen)
-	        return excerpt.trim();
 
-	    //return excerpt.substring(0, maxLen).trim() + "...";
-
-	    StringBuilder result = new StringBuilder();
-	    BreakIterator wordIterator = BreakIterator.getWordInstance();
-	    wordIterator.setText(excerpt);
-	    int start = wordIterator.first();
-	    int end = wordIterator.next();
-	    int totalLen = 0;
-	    while (end != BreakIterator.DONE) {
-	        String word = excerpt.substring(start, end);
-	        result.append(word);
-	        totalLen += word.length();
-	        if (totalLen >= maxLen)
-	            break;
-	        start = end;
-	        end = wordIterator.next();
-	    }
-
-	    if (totalLen == 0)
-	        return null;
-	    return result.toString().trim() + "...";
-	}
 	HashMap<String, String> GetBookMetadata(String text) {
 
 		HashMap<String, String> items = new HashMap<String, String>();
@@ -138,11 +129,7 @@ public class GuttenbergHelper {
 				}
 				continue;
 			}
-/*			if ((index = line.lastIndexOf("by")) != -1) {
-				items.put("Author", line.substring(index++).trim());
-				continue;
-			}
-*/
+
 			if ((index = line.lastIndexOf("Translanted by")) != -1) {
 				items.put("Translanted by", line.substring(index++).trim());
 				continue;
@@ -171,10 +158,27 @@ public class GuttenbergHelper {
 		return book;
 	}
 
-	public int searchForFilesExt(File root, ArrayList<File> only, String ext) throws Exception {
+	Book RemoveText(Book book) throws IOException {
+		Path p = Paths.get(book.getPath());
+	    String text = book.getText();
+	    Iterator<String> itt = removetext.listIterator();
+	    String replaced;
+		while (itt.hasNext()) {
+			replaced = itt.next();
+			text.replace(replaced, " ");
+
+		}
+		book.setText(text);
+		return book;
+	}
+
+
+
+	public int searchForFilesExt(File root, ArrayList<File> only, String ext, int max) throws Exception {
 		// TODO Auto-generated method stub
-        if ( count > 1000 )  return count;
-        
+		if (count > max)
+			return count;
+
 		if (root == null || only == null)
 			return 0; // just for safety
 		// || !root.getPath().toString().contains("old"))
@@ -182,7 +186,7 @@ public class GuttenbergHelper {
 			// System.out.println(root.toString());
 			for (File file : root.listFiles()) {
 				if (file != null) {
-					searchForFilesExt(file, only, ext);
+					searchForFilesExt(file, only, ext, max);
 				}
 			}
 		} else if (root.isFile() && root.getName().endsWith(ext)) {
@@ -193,4 +197,5 @@ public class GuttenbergHelper {
 		}
 		return count;
 	}
+
 }

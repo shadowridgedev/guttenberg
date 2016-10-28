@@ -37,7 +37,6 @@ public class GuttenbergStorage {
 		String path = book.getPath();
 		String author = book.getAuthor();
 		String title = book.getTitle();
-		String text = book.getText();
 		String date = book.getDate();
 		File file = book.getFile();
 	String sql = "INSERT  INTO guttenberg ( Author, Title, Text, Date, Path, File) VALUES ( `" + author +"`,`" +title +"`," + "LOAD_FILE(`" + path +"`),`" + date+"`,`" + path +"`,`"+file.getName()+ "` )";
