@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Guttenberg</groupId>
+	<artifactId>Guttenberg</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<name>Jboss</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+		</repository>
+
+
+	</repositories>
+
+
+
+	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.antlr/stringtemplate -->
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>stringtemplate</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>edu.washington.cs.knowitall.stanford-corenlp</groupId>
+			<artifactId>stanford-ner-models</artifactId>
+			<version>1.3.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-parser -->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-parser</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.5.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.antlr/antlr4 -->
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.antlr/antlr4 -->
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr4</artifactId>
+			<version>4.5.3</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.antlr/antlr-runtime -->
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr-runtime</artifactId>
+			<version>3.5.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-collections -->
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-collections</artifactId>
+			<version>3.1.0-M10</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-corenlp -->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j/neo4j -->
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j</artifactId>
+			<version>3.1.0-M10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.mobicents.external.freetts/freetts -->
+		<dependency>
+			<groupId>org.mobicents.external.freetts</groupId>
+			<artifactId>freetts</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/org.neo4j/neo4j-common -->
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-common</artifactId>
+			<version>3.1.0-M10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>1.0.6</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+
+
+
+
+	</build>
+</project>
