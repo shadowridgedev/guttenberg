@@ -9,7 +9,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ScanFordata ( ) {
+ 
+public class ScanFordata  {
 	
 
     
@@ -17,7 +18,8 @@ public class ScanFordata ( ) {
 	// count = helper.searchForFilesExt(root, Only, filetype, depth);
 	GuttenbergIndex index = new GuttenbergIndex(path);
 
-	
+    
+  
 	String result = null;
 	int i = 0;
 	while (i++ != 100) {
@@ -65,3 +67,4 @@ public class ScanFordata ( ) {
 }
 
 }
+*/
