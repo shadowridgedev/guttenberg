@@ -23,6 +23,18 @@
     <artifactId>ant-commons-net</artifactId>
     <version>1.9.7</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
+<dependency>
+    <groupId>com.datastax.cassandra</groupId>
+    <artifactId>cassandra-driver-core</artifactId>
+    <version>3.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
+<dependency>
+    <groupId>com.datastax.cassandra</groupId>
+    <artifactId>cassandra-driver-core</artifactId>
+    <version>3.1.2</version>
+</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.antlr/stringtemplate -->
 		<dependency>

@@ -1,7 +1,5 @@
 package guttenberg;
 
-
-
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,17 +7,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 
- 
-public class ScanFordata  {
-	
+public class ScanFordata {
 
-    
-    public ArrayList<File> scan ( File root,  String path, ArrayList<File> Only,  GuttenbergHelper helper,String filetype, int depth)  {
+
+	public ArrayList<File> scan ( File root,  String path, ArrayList<File> Only,  GuttenbergHelper helper,String filetype, int depth)  {
 	// count = helper.searchForFilesExt(root, Only, filetype, depth);
 	GuttenbergIndex index = new GuttenbergIndex(path);
-
+    return Only;
+	}
+}
     
-  
+  /*
 	String result = null;
 	int i = 0;
 	while (i++ != 100) {
@@ -64,7 +62,9 @@ public class ScanFordata  {
 		System.out.println("Final count Guttenberg Files" + helper.GuttenbergFiles + " Not Guttenberg Files "
 				+ helper.NotGuttenbergFiles);
 	}
-}
+
 
 }
+
+
 */
