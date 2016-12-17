@@ -8,17 +8,19 @@ import java.util.Iterator;
 import java.util.stream.Stream;
 
 public class GuttenbergIndex {
+	GuttenbergIndex() {
+	}
 
-	GuttenbergIndex(String path) { 
+	public ArrayList<String> GetGuttbergIndex(String path, ArrayList<String> Only) {
 		ArrayList<String> lines = getfiles(path);
 		Iterator<String> i = lines.iterator();
-		while (i.hasNext()) 	System.out.println(i.next());
+		while (i.hasNext())
+			System.out.println(i.next());
+		return lines;
 	}
-	
-	
 
 	ArrayList<String> getfiles(String filepath) {
-		ArrayList<String> Only = new ArrayList<String>();
+
 		// read file into stream, try-with-resources
 
 		try (Stream<String> stream = Files.lines(Paths.get(filepath + "\\GUTINDEX.ALL"))) {
@@ -28,13 +30,13 @@ public class GuttenbergIndex {
 
 				{
 					Only.add(i.next());
-				
+
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-   return Only;
+		return Only;
 	}
-	
+
 }
