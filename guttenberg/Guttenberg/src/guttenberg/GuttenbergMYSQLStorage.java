@@ -1,13 +1,14 @@
 package guttenberg;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.math.*;
+
+
 
 public class GuttenbergMYSQLStorage {
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+
 
 	Connection conn = null;
 	Statement stmt = null;
@@ -19,7 +20,7 @@ public class GuttenbergMYSQLStorage {
 		// Open a connection
 		System.out.println("Connecting to database...");
 		try {
-			conn = DriverManager.getConnection(DB_URL, USER, PASS);
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/guttenberg","root","Rs232x25");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

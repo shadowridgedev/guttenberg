@@ -24,11 +24,11 @@ public class GuttenbergHelper {
 		String GuttenbergPath = GuttenbergBase + "\\Guttenberg\\";
 		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
 		String RemoveText = GuttenbergBase + "\\RemoveText\\";
-
+		String CleanBook = GuttenbergBase + "\\CleanBook\\";
 		String[] paths = new File(RemoveText).list();
 		if (paths != null) {
 			for (String remove : paths) {
-				Path path = Paths.get(RemoveText+remove);
+				Path path = Paths.get(RemoveText + remove);
 
 				removetext.add(new String(Files.readAllBytes(path)));
 			}
@@ -41,6 +41,7 @@ public class GuttenbergHelper {
 				&& !current.getName().endsWith("zip") && lookslikeGuttenberg(current)) {
 			GuttenbergFiles++;
 			Guttenberg = true;
+			return Guttenberg;
 		}
 		NotGuttenbergFiles++;
 		return Guttenberg;
@@ -74,17 +75,15 @@ public class GuttenbergHelper {
 		// System.out.println("Not Guttenberg file is " + current.toString() + "
 		// Size is " + current.length() + " Not Guttenberg " +
 		// NotGuttenbergFiles++ + " GuttenbergFiles " + GuttenbergFiles);
-
-		scanner.close();
-		scanner = new Scanner(current);
 		/*
+		 * scanner.close(); scanner = new Scanner(current);
+		 * 
 		 * for (int x = 0; x < 3; x++) { while (scanner.hasNextLine()) {
 		 * System.out.println(scanner.nextLine()); } }
 		 */
 		scanner.close();
 		return false;
 	}
-
 
 	HashMap<String, String> GetBookMetadata(String text) {
 
@@ -160,9 +159,9 @@ public class GuttenbergHelper {
 
 	Book RemoveText(Book book) throws IOException {
 		Path p = Paths.get(book.getPath());
-	    String text = book.getText();
-	    Iterator<String> itt = removetext.listIterator();
-	    String replaced;
+		String text = book.getText();
+		Iterator<String> itt = removetext.listIterator();
+		String replaced;
 		while (itt.hasNext()) {
 			replaced = itt.next();
 			text.replace(replaced, "%^%^");
@@ -171,8 +170,6 @@ public class GuttenbergHelper {
 		book.setText(text);
 		return book;
 	}
-
-
 
 	public int searchForFilesExt(File root, ArrayList<File> only, String ext, int max) throws Exception {
 		// TODO Auto-generated method stub

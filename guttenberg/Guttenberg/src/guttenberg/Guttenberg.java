@@ -17,21 +17,20 @@ public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
 
+   
+		
 		String path = args[0];
 		String GuttenbergBase = args[1];
-		String url = "jdbc:mysql://localhost:3306/books?autoReconnect=true&useSSL=false";
-		String username = "root";
-		String password = "rs232x25";
-		String GuttenbergPath = GuttenbergBase + "\\Guttenberg\\";
-		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
-		String CleanBook = GuttenbergBase + "\\CleanBook\\";
-		String RemoveText = GuttenbergBase + "\\RemoveText\\";
+		String MySqlusername = args[2];
+		String MySqlpassword = args[3];
+		String MySQLurl = args[4];
 
-		int count;
+	
 		HashMap<String, String> metadata = new HashMap<String, String>();
 
-		// GuttenbergMYSQLStorage storage = new GuttenbergMYSQLStorage(url,
-		// username, password);
+		GuttenbergMYSQLStorage MySqlstorage = new GuttenbergMYSQLStorage(MySQLurl,MySqlusername, MySqlpassword);
+		GuttenbergNeo4JStorage	 Neo4JStorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687", "neo4j", "rs232x25");
+		
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
 
 		File root = new File(path);

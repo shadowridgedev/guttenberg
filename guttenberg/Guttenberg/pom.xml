@@ -17,6 +17,45 @@
 
 
 	<dependencies>
+	
+	<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+
+	
+	
+		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.11</artifactId>
+			<version>2.0.0-M3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-dse -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-dse</artifactId>
+			<version>2.2.0-rc3</version>
+		</dependency>
+
+
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j.driver</groupId>
+			<artifactId>neo4j-java-driver</artifactId>
+			<version>1.0.6</version>
+		</dependency>
 		<dependency>
 			<groupId>io.cortical</groupId>
 			<artifactId>retina-api-java-sdk</artifactId>
@@ -33,7 +72,7 @@
 			<artifactId>opennlp-uima</artifactId>
 			<version>1.6.0</version>
 		</dependency>
- 	<!-- https://mvnrepository.com/artifact/org.apache.ant/ant-commons-net -->
+		<!-- https://mvnrepository.com/artifact/org.apache.ant/ant-commons-net -->
 		<dependency>
 			<groupId>org.apache.ant</groupId>
 			<artifactId>ant-commons-net</artifactId>
