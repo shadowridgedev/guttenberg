@@ -2,12 +2,11 @@ package guttenberg;
 
 import java.io.File;
 import java.sql.*;
-import java.math.*;
 
 
 
 public class GuttenbergMYSQLStorage {
-	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
+//	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
 
 	Connection conn = null;
@@ -15,7 +14,7 @@ public class GuttenbergMYSQLStorage {
 
 	GuttenbergMYSQLStorage(String DB_URL, String USER, String PASS) throws ClassNotFoundException {
 
-		Class.forName("com.mysql.jdbc.Driver");
+//		Class.forName("com.mysql.jdbc.Driver");
 
 		// Open a connection
 		System.out.println("Connecting to database...");

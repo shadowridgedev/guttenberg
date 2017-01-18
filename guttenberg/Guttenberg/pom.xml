@@ -1,5 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Guttenberg</groupId>
 	<artifactId>Guttenberg</artifactId>
@@ -14,14 +17,16 @@
 
 	</repositories>
 
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
-	
-	<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
 
-	
-	
+		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+
+
+
 		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
 		<dependency>
 			<groupId>com.datastax.spark</groupId>
@@ -210,6 +215,7 @@
 			<artifactId>neo4j-java-driver</artifactId>
 			<version>1.0.6</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
