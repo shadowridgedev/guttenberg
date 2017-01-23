@@ -21,7 +21,7 @@ public class GuttenbergHelper {
 
 	GuttenbergHelper(String GuttenbergBase) throws IOException {
 
-		String GuttenbergPath = GuttenbergBase + "\\Guttenberg\\";
+		String GuttenbergPath = GuttenbergBase + "\\Guttenberg1\\";
 		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
 		String RemoveText = GuttenbergBase + "\\RemoveText\\";
 		String CleanBook = GuttenbergBase + "\\CleanBook\\";
@@ -72,8 +72,8 @@ public class GuttenbergHelper {
 				return true;
 			}
 		}
-		// System.out.println("Not Guttenberg file is " + current.toString() + "
-		// Size is " + current.length() + " Not Guttenberg " +
+		// System.out.println("Not Guttenberg1 file is " + current.toString() + "
+		// Size is " + current.length() + " Not Guttenberg1 " +
 		// NotGuttenbergFiles++ + " GuttenbergFiles " + GuttenbergFiles);
 		/*
 		 * scanner.close(); scanner = new Scanner(current);

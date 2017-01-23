@@ -51,7 +51,7 @@ public class ScanFordata {
 				Path local = Paths.get(NotGuttenbergPath + current.getName());
 				Files.copy(current.toPath(), local, REPLACE_EXISTING);
 
-				result += " is not Guttenberg";
+				result += " is not Guttenberg1";
 			}
 			System.out.println(result);
 
@@ -59,7 +59,7 @@ public class ScanFordata {
 		int problem = count - (helper.GuttenbergFiles + helper.NotGuttenbergFiles);
 		if (problem != 0)
 			System.out.println("Problem " + problem);
-		System.out.println("Final count Guttenberg Files" + helper.GuttenbergFiles + " Not Guttenberg Files "
+		System.out.println("Final count Guttenberg1 Files" + helper.GuttenbergFiles + " Not Guttenberg1 Files "
 				+ helper.NotGuttenbergFiles);
 	}
 
