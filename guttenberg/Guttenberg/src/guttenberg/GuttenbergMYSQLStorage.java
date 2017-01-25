@@ -39,6 +39,7 @@ public class GuttenbergMYSQLStorage {
 		String title = book.getTitle();
 		String date = book.getDate();
 		File file = book.getFile();
+/*
 	String sql = "INSERT  INTO guttenberg ( Author, Title, Text, Date, Path, File) VALUES ( `" + author +"`,`" +title +"`," + "LOAD_FILE(`" + path +"`),`" + date+"`,`" + path +"`,`"+file.getName()+ "` )";
 //		String sql = "INSERT INTO guttenberg ( Title) VALUES ( 'Unknown')";
 	//	String sql = "INSERT INTO `guttenberg` ( `Text`) VALUES (  LOAD_FILE( '" + Path +  "'))";
@@ -50,5 +51,6 @@ public class GuttenbergMYSQLStorage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 	}
 }
