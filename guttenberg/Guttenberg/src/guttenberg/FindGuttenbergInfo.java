@@ -27,19 +27,24 @@ public class FindGuttenbergInfo {
 
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		String line = null;
-
+		String index = null;
 		while ((line = br.readLine()) != null) {
+			if (line.contains("by")) {
 			int len = line.length();
-			String index = null;
-			index = line.substring(len - lastDigit(index), len).trim();
-			if (index.matches("^\\d.*?\\d$") && line.contains("by")) {
-				// System.out.println("Book stored " + index + " line " + line);
-				Book current = new Book();
-				parsebook(line, current);
-				current.index = index;
-				books.add(current);
-			} else System.out.println("Book not stored  " + index + " line   " + line);
+			int numsize =  lastDigit(TrimLastChar(line));
+			if (numsize > 0 ) {
+				index = line.substring(len - (numsize+1), len).trim();
+				System.out.println("Book stored " + index + " line " + line);
+					Book current = new Book();
+					parsebook(line, current);
+					current.index = index;
+					books.add(current);
+				} else System.out.println("Book not stored  " + index + " line   " + line);
 
+			}
+			
+			
+		
 		}
 		br.close();
 		return books;
@@ -50,12 +55,20 @@ public class FindGuttenbergInfo {
 
 	}
 
+	String TrimLastChar(String s ) {
+		char c = s.charAt(s.length()-1);
+	    if( s.charAt(s.length()-1) == 'C') {
+	    	return s.substring(0, s.length()-1);
+	    }
+		return s;
+		
+	}
 	public int lastDigit(String s) {
 		int count = 0;
 
 		if (s != null && !s.isEmpty()) {
-			new StringBuilder(s).reverse().toString();
-			for (char c : s.toCharArray()) {
+			String d = new StringBuilder(s).reverse().toString();
+			for (char c : d.toCharArray()) {
 				if (Character.isDigit(c)) {
 					count++;
 				} else
