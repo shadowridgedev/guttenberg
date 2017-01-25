@@ -34,10 +34,10 @@ public class Guttenberg {
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 		File root = new File(GuttenbergPath);
-		ArrayList<String> OnlyName = new ArrayList<String>();
+		ArrayList<String> OnlyName;
 	//	ArrayList<File> Only = new ArrayList<File>();
 	//	count = helper.searchForFilesExt(root, Only, ".txt", 30);
-
+        OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
 		ArrayList<Book> thebooks = filefinder.getinfo(OnlyName);
 		
 		/*
@@ -45,7 +45,7 @@ public class Guttenberg {
 		 * current.getName()); }
 		 */
 		String result = null;
-		int i = 0;
+
 	}
 }
 

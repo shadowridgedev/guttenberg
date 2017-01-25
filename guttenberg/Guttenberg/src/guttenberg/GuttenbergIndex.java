@@ -16,8 +16,9 @@ public class GuttenbergIndex {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<String> GetGuttbergIndex(String path, ArrayList<String> Only) {	
+	public ArrayList<String> GetGuttbergIndex(String path) {	
 		// read file into stream, try-with-resources
+		ArrayList<String> Only = new ArrayList<String> ();
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
 
