@@ -31,19 +31,26 @@ public class Guttenberg {
 
 		GuttenbergMYSQLStorage storage = new GuttenbergMYSQLStorage(url, username, password);
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
-
-		File root = new File(path);
+		GuttenbergIndex indexer = new GuttenbergIndex();
+		FindGuttenbergInfo finder = new FindGuttenbergInfo();
+		File root = new File(GuttenbergPath);
+		ArrayList<String> OnlyName = new ArrayList<String>();
 		ArrayList<File> Only = new ArrayList<File>();
 		count = helper.searchForFilesExt(root, Only, ".txt", 30);
-
+		OnlyName = indexer.GetGuttbergIndex(GuttenbergPath, OnlyName);
+		
 		/*
 		 * for (File current : Only) { System.out.println("File  " +
 		 * current.getName()); }
 		 */
 		String result = null;
-		int i=0;
+		int i = 0;
+	}
+}
+
+/*		
 		while (i++ != 100) {
-       
+
 			for (File current : Only) {
 				result = ("File " + current.getName() + " ");
 				if (helper.isGuttenberg(current)) {
@@ -64,10 +71,10 @@ public class Guttenberg {
 
 					book = helper.RemoveText(book);
 					book.setPath(CleanBook + book.getName());
-//					Files.write(Paths.get(book.getPath()), book.getText().getBytes());
+					Files.write(Paths.get(book.getPath()), book.getText().getBytes());
 
 					result += current.getPath() + "    " + current.getName();
-				    storage.InsertBook(book);
+					storage.InsertBook(book);
 
 				} else {
 					Path local = Paths.get(NotGuttenbergPath + current.getName());
@@ -85,3 +92,5 @@ public class Guttenberg {
 		}
 	}
 }
+*/
+		
