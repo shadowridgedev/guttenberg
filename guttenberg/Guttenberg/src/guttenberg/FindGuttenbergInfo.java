@@ -34,15 +34,25 @@ public class FindGuttenbergInfo {
 			if (line.substring(len-4, len).matches("^\\d.*?\\d$")) {
 				index = line.substring(len-10, len).trim();
 				System.out.println("Book   " + index + " line   " +line);
-			}
-//			Book current = new Book();
-//			books.add(current);
+	
+    		Book current = new Book();
+    		parsebook(line, current);
+    		current.index = index;
+    		
+			books.add(current);
 
 		
 		}
 		br.close();
-		return books;
 
+		}
+		return books;
+	}
+		
+
+	private void parsebook(String line, Book current) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

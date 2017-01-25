@@ -32,12 +32,13 @@ public class Guttenberg {
 		GuttenbergMYSQLStorage storage = new GuttenbergMYSQLStorage(url, username, password);
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
 		GuttenbergIndex indexer = new GuttenbergIndex();
-		FindGuttenbergInfo finder = new FindGuttenbergInfo();
+		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 		File root = new File(GuttenbergPath);
 		ArrayList<String> OnlyName = new ArrayList<String>();
-		ArrayList<File> Only = new ArrayList<File>();
-		count = helper.searchForFilesExt(root, Only, ".txt", 30);
-		OnlyName = indexer.GetGuttbergIndex(GuttenbergPath, OnlyName);
+	//	ArrayList<File> Only = new ArrayList<File>();
+	//	count = helper.searchForFilesExt(root, Only, ".txt", 30);
+
+		ArrayList<Book> thebooks = filefinder.getinfo(OnlyName);
 		
 		/*
 		 * for (File current : Only) { System.out.println("File  " +

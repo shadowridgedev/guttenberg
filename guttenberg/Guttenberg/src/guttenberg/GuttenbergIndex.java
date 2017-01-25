@@ -24,7 +24,7 @@ public class GuttenbergIndex {
 		    for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
 		        System.out.println("File " + listOfFiles[i].getName());
-		        if (listOfFiles[i].toString().matches("G*")) {
+		        if (listOfFiles[i].toString().contains("GUTINDEX")) {
 			    	  Only.add(listOfFiles[i].toString());
 			          System.out.println("File with G " + listOfFiles[i].getName());
 			      }

@@ -10,6 +10,7 @@ public class Book {
 	String date ="";
 	String title = "";
 	String text = "";
+	String index;
 	File file = null;
 	/**
 	 * @return the key
