@@ -23,7 +23,47 @@
 
 	<dependencies>
 
-		
+		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-cassandra -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-cassandra</artifactId>
+			<version>5.0.4.Final</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-neo4j -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-neo4j</artifactId>
+			<version>5.0.4.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+		<dependency>
+			<groupId>com.datastax.spark</groupId>
+			<artifactId>spark-cassandra-connector_2.11</artifactId>
+			<version>2.0.0-M3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-core -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.datastax.cassandra/cassandra-driver-dse -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-dse</artifactId>
+			<version>2.2.0-rc3</version>
+		</dependency>
+
+
+
+
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>

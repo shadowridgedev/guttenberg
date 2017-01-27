@@ -1,31 +1,38 @@
 package guttenberg;
 
-import java.io.File;
-import java.util.Date;
+import java.io.Serializable;
 
-public class Book {
-	Integer idBook = null;
-	String title = null;
-	String author = null;
-	String date =null;
-	String text = null;
-	String extra = null;
-	String filename = null;
-	String path =null;
-	String EtextNumber = null;
-	String source = null;
-	String name = null;
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
+import org.hibernate.id.IdentifierGenerator;
+
+public class Book implements  Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5068990239464021287L;
+	int idBook;
+	String title;
+	String author ;
+	String date;
+	String text ;
+	String extra ;
+	String filename ;
+	String path;
+	String EtextNumber ;
+	String source ;
+	String name ;
 	boolean verified = false;
     /**
 	 * @return the idBook
 	 */
-	public Integer getIdBook() {
+	public int getIdBook() {
 		return idBook;
 	}
 	/**
 	 * @param idBook the idBook to set
 	 */
-	public void setIdBook(Integer idBook) {
+	public void setIdBook(int idBook) {
 		this.idBook = idBook;
 	}
 	/**
@@ -173,6 +180,7 @@ public class Book {
 		this.parsed = parsed;
 	}
 	boolean parsed = false;
+
 
 
 

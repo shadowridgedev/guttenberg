@@ -30,39 +30,53 @@ public class FindGuttenbergInfo {
 		String index = null;
 		while ((line = br.readLine()) != null) {
 			if (line.contains("by")) {
-			int len = line.length();
-			int numsize =  lastDigit(TrimLastChar(line));
-			if (numsize > 0 ) {
-				index = line.substring(len - (numsize+1), len).trim();
-				System.out.println("Book stored " + index + " line " + line);
+				int len = line.length();
+				int numsize = lastDigit(TrimLastChar(line));
+				if (numsize > 0) {
+					index = line.substring(len - (numsize + 1), len).trim();
+					System.out.println("Book stored " + index + " line " + line);
 					Book current = new Book();
 					parsebook(line, current);
 					current.EtextNumber = index;
 					books.add(current);
-				} else System.out.println("Book not stored  " + index + " line   " + line);
+				} else
+					System.out.println("Book not stored  " + index + " line   " + line);
 
 			}
-			
-			
-		
+
 		}
 		br.close();
 		return books;
 	}
 
-	private void parsebook(String line, Book current) {
-		// TODO Auto-generated method stub
+	private Book parsebook(String line, Book current) {
+		String title = "";
+		String author = "";
+		boolean flag = true;
+		String[] sentence = line.split(" ");
+		for (String word : sentence) {
+			if (word.equals("by"))
+				flag = false;
+			if (flag)
+				title = title + " " + word;
+			else
+				author = author + " " + word;
 
+		}
+		current.title = title.trim();
+		current.author = author.trim();
+		return current;
 	}
 
-	String TrimLastChar(String s ) {
-		char c = s.charAt(s.length()-1);
-	    if( s.charAt(s.length()-1) == 'C') {
-	    	return s.substring(0, s.length()-1);
-	    }
+	String TrimLastChar(String s) {
+		char c = s.charAt(s.length() - 1);
+		if (s.charAt(s.length() - 1) == 'C') {
+			return s.substring(0, s.length() - 1);
+		}
 		return s;
-		
+
 	}
+
 	public int lastDigit(String s) {
 		int count = 0;
 
