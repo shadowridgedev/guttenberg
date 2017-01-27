@@ -4,62 +4,41 @@ import java.io.File;
 import java.util.Date;
 
 public class Book {
-	Integer key = null;
-	String path =null;
-	String name = null;
+	Integer idBook = null;
+	String title = null;
 	String author = null;
 	String date =null;
-	String title = null;
 	String text = null;
-	String index  = null;
-	File file = null;
-	/**
-	 * @return the file
+	String extra = null;
+	String filename = null;
+	String path =null;
+	String EtextNumber = null;
+	String source = null;
+	String name = null;
+	boolean verified = false;
+    /**
+	 * @return the idBook
 	 */
-	public File getFile() {
-		return file;
+	public Integer getIdBook() {
+		return idBook;
 	}
 	/**
-	 * @param file the file to set
+	 * @param idBook the idBook to set
 	 */
-	public void setFile(File file) {
-		this.file = file;
+	public void setIdBook(Integer idBook) {
+		this.idBook = idBook;
 	}
 	/**
-	 * @return the key
+	 * @return the title
 	 */
-	public Integer getKey() {
-		return key;
+	public String getTitle() {
+		return title;
 	}
 	/**
-	 * @param key the key to set
+	 * @param title the title to set
 	 */
-	public void setKey(Integer key) {
-		this.key = key;
-	}
-	/**
-	 * @return the path
-	 */
-	public String getPath() {
-		return path;
-	}
-	/**
-	 * @param path the path to set
-	 */
-	public void setPath(String path) {
-		this.path = path;
-	}
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	/**
 	 * @return the author
@@ -86,18 +65,6 @@ public class Book {
 		this.date = date;
 	}
 	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
-	/**
-	 * @param title the title to set
-	 */
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	/**
 	 * @return the text
 	 */
 	public String getText() {
@@ -110,16 +77,76 @@ public class Book {
 		this.text = text;
 	}
 	/**
-	 * @return the index
+	 * @return the extra
 	 */
-	public String getIndex() {
-		return index;
+	public String getExtra() {
+		return extra;
 	}
 	/**
-	 * @param index the index to set
+	 * @param extra the extra to set
 	 */
-	public void setIndex(String index) {
-		this.index = index;
+	public void setExtra(String extra) {
+		this.extra = extra;
+	}
+	/**
+	 * @return the filename
+	 */
+	public String getFilename() {
+		return filename;
+	}
+	/**
+	 * @param filename the filename to set
+	 */
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	/**
+	 * @return the path
+	 */
+	public String getPath() {
+		return path;
+	}
+	/**
+	 * @param path the path to set
+	 */
+	public void setPath(String path) {
+		this.path = path;
+	}
+	/**
+	 * @return the etextNumber
+	 */
+	public String getEtextNumber() {
+		return EtextNumber;
+	}
+	/**
+	 * @param etextNumber the etextNumber to set
+	 */
+	public void setEtextNumber(String etextNumber) {
+		EtextNumber = etextNumber;
+	}
+	/**
+	 * @return the source
+	 */
+	public String getSource() {
+		return source;
+	}
+	/**
+	 * @param source the source to set
+	 */
+	public void setSource(String source) {
+		this.source = source;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 	/**
 	 * @return the verified
@@ -145,20 +172,8 @@ public class Book {
 	public void setParsed(boolean parsed) {
 		this.parsed = parsed;
 	}
-	/**
-	 * @return the source
-	 */
-	public String getSource() {
-		return source;
-	}
-	/**
-	 * @param source the source to set
-	 */
-	public void setSource(String source) {
-		this.source = source;
-	}
-	boolean verified = false;
-	boolean parsed= false;
-	String source = null;
+	boolean parsed = false;
+
+
 
 }

@@ -37,7 +37,7 @@ public class FindGuttenbergInfo {
 				System.out.println("Book stored " + index + " line " + line);
 					Book current = new Book();
 					parsebook(line, current);
-					current.index = index;
+					current.EtextNumber = index;
 					books.add(current);
 				} else System.out.println("Book not stored  " + index + " line   " + line);
 

@@ -44,7 +44,7 @@ public class GuttenbergMYSQLStorage {
 		String author = book.getAuthor();
 		String title = book.getTitle();
 		String date = book.getDate();
-		File file = book.getFile();
+		String file = book.getFilename();
 /*
 	String sql = "INSERT  INTO guttenberg ( Author, Title, Text, Date, Path, File) VALUES ( `" + author +"`,`" +title +"`," + "LOAD_FILE(`" + path +"`),`" + date+"`,`" + path +"`,`"+file.getName()+ "` )";
 //		String sql = "INSERT INTO guttenberg ( Title) VALUES ( 'Unknown')";
