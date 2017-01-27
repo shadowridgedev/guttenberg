@@ -24,8 +24,20 @@
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-cassandra -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-cassandra</artifactId>
+			<version>5.0.4.Final</version>
+		</dependency>
 
 
+		<!-- https://mvnrepository.com/artifact/org.hibernate.ogm/hibernate-ogm-neo4j -->
+		<dependency>
+			<groupId>org.hibernate.ogm</groupId>
+			<artifactId>hibernate-ogm-neo4j</artifactId>
+			<version>5.0.4.Final</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.datastax.spark/spark-cassandra-connector_2.11 -->
 		<dependency>
@@ -127,12 +139,15 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.5</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-java8 -->
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>5.2.5.Final</version>
+			<version>5.2.6.Final</version>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.neo4j.driver</groupId>
 			<artifactId>neo4j-java-driver</artifactId>

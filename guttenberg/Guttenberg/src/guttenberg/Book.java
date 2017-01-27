@@ -1,17 +1,30 @@
 package guttenberg;
 
 import java.io.File;
+import java.util.Date;
 
 public class Book {
-	Integer key;
-	String path = "";
-	String name = "";
-	String author = "";
-	String date ="";
-	String title = "";
-	String text = "";
-	String index;
+	Integer key = null;
+	String path =null;
+	String name = null;
+	String author = null;
+	String date =null;
+	String title = null;
+	String text = null;
+	String index  = null;
 	File file = null;
+	/**
+	 * @return the file
+	 */
+	public File getFile() {
+		return file;
+	}
+	/**
+	 * @param file the file to set
+	 */
+	public void setFile(File file) {
+		this.file = file;
+	}
 	/**
 	 * @return the key
 	 */
@@ -97,16 +110,55 @@ public class Book {
 		this.text = text;
 	}
 	/**
-	 * @return the file
+	 * @return the index
 	 */
-	public File getFile() {
-		return file;
+	public String getIndex() {
+		return index;
 	}
 	/**
-	 * @param file the file to set
+	 * @param index the index to set
 	 */
-	public void setFile(File file) {
-		this.file = file;
-	};
-	
+	public void setIndex(String index) {
+		this.index = index;
+	}
+	/**
+	 * @return the verified
+	 */
+	public boolean isVerified() {
+		return verified;
+	}
+	/**
+	 * @param verified the verified to set
+	 */
+	public void setVerified(boolean verified) {
+		this.verified = verified;
+	}
+	/**
+	 * @return the parsed
+	 */
+	public boolean isParsed() {
+		return parsed;
+	}
+	/**
+	 * @param parsed the parsed to set
+	 */
+	public void setParsed(boolean parsed) {
+		this.parsed = parsed;
+	}
+	/**
+	 * @return the source
+	 */
+	public String getSource() {
+		return source;
+	}
+	/**
+	 * @param source the source to set
+	 */
+	public void setSource(String source) {
+		this.source = source;
+	}
+	boolean verified = false;
+	boolean parsed= false;
+	String source = null;
+
 }

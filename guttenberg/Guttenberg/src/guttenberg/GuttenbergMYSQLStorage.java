@@ -2,6 +2,7 @@ package guttenberg;
 
 import java.io.File;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 
@@ -26,6 +27,11 @@ public class GuttenbergMYSQLStorage {
 		}
 	}
 
+	void StoreBooks( ArrayList<Book> books)  {
+		for(Book book:books) {
+			InsertBook(book);
+		}
+	}
 	public void InsertBook(Book book) {
 		System.out.println("Writimg records into the table...");
 		try {
