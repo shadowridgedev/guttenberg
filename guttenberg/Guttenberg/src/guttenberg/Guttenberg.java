@@ -20,8 +20,11 @@ public class Guttenberg {
 
 		HashMap<String, String> metadata = new HashMap<String, String>();
 
-		GuttenbergMYSQLStorage storage = new GuttenbergMYSQLStorage(url, username, password);
-		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
+		GuttenbergHibernateStorage storage = new GuttenbergHibernateStorage();
+		GuttenbergHelper	helper = new GuttenbergHelper(GuttenbergBase);
+		
+		
+		
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
@@ -32,12 +35,9 @@ public class Guttenberg {
 	//	count = helper.searchForFilesExt(root, Only, ".txt", 30);
 		
         OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
-		ArrayList<Book> thebooks = filefinder.getinfo(OnlyName);
-		storage.StoreBooks(thebooks);
-		/*
-		 * for (File current : Only) { System.out.println("File  " +
-		 * current.getName()); }
-		 */
+		ArrayList<Book> thebooks = filefinder.getinfo(OnlyName);	
+	    storage.SaveBooks(thebooks);
+
 		String result = null;
 
 	}

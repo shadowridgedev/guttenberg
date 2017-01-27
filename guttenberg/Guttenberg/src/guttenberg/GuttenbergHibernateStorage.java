@@ -1,24 +1,17 @@
 package guttenberg;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 public class GuttenbergHibernateStorage {
 	private static SessionFactory factory;
 	private static ServiceRegistry serviceRegistry;
-	private static Transaction newTransaction;
 	private static Session newSession;
 	
 	GuttenbergHibernateStorage() {
@@ -29,6 +22,12 @@ public class GuttenbergHibernateStorage {
 		factory = config.buildSessionFactory(serviceRegistry);
 		newSession = factory.openSession();
 
+	}
+	
+	void SaveBooks(ArrayList<Book> thebooks)  {
+		for (Book book: thebooks) {
+			saveBook(book);
+		}
 	}
 	
 	void saveBook( Book book)  {
