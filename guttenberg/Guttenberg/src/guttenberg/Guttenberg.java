@@ -23,7 +23,8 @@ public class Guttenberg {
 
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
         GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
-
+        GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51", 8080);
+        
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
         
 		GuttenbergIndex indexer = new GuttenbergIndex();
