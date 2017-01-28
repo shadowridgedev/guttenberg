@@ -19,10 +19,14 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<hibernate.ogm.datastore.provider>
+			""neo4j_embedded"</hibernate.ogm.datastore.provider>
+		<hibernate.ogm.neo4j.database_path>
+			"E:\Neo4j\databases\shadowridge.db"
+		</hibernate.ogm.neo4j.database_path>
 	</properties>
-
 	<dependencies>
-	<!-- logback -->
+		<!-- logback -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>
@@ -34,8 +38,8 @@
 			<artifactId>logback-classic</artifactId>
 			<version>0.9.28</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -184,7 +188,11 @@
 			<version>3.1.0-M10</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>it.larus-ba</groupId>
+			<artifactId>neo4j-jdbc-bolt</artifactId>
+			<version>3.0-M02</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.neo4j.driver</groupId>

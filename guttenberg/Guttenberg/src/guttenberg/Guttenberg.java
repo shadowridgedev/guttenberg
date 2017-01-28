@@ -21,10 +21,11 @@ public class Guttenberg {
 
 		HashMap<String, String> metadata = new HashMap<String, String>();
 
-		GuttenbergHibernateStorage storage = new GuttenbergHibernateStorage();
+		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
+        GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
 
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
-
+        
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
@@ -35,19 +36,19 @@ public class Guttenberg {
 
 		List<String> OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
 		List<Book> thebooks = filefinder.getinfo(OnlyName);
-		storage.emptyTable();
-		storage.SaveBooks(thebooks);
-		List<Book> SavedBooks = storage.returnBooks();
+		MySQLstorage.emptyTable();
+		MySQLstorage.SaveBooks(thebooks);
+		List<Book> SavedBooks = MySQLstorage.returnBooks();
 
 
 
-		List<Book> BookList = storage.returnBook("idBook", "1");
+		List<Book> BookList = MySQLstorage.returnBook("idBook", "1");
 		for (Book result : BookList) {
 			System.out.println(result.toString());
 		}
 //		storage.DeleteBooks(SavedBooks);
 		
-		storage.close();
+		MySQLstorage.close();
 		String result = null;
 
 	}
