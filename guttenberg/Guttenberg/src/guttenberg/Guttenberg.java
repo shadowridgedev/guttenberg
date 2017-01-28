@@ -3,6 +3,7 @@ package guttenberg;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Guttenberg {
 
@@ -21,27 +22,31 @@ public class Guttenberg {
 		HashMap<String, String> metadata = new HashMap<String, String>();
 
 		GuttenbergHibernateStorage storage = new GuttenbergHibernateStorage();
-		GuttenbergHelper	helper = new GuttenbergHelper(GuttenbergBase);
-		
-		
-		
+
+		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
+
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
-		
-		
-		ArrayList<String> OnlyName;
-	//	ArrayList<File> Only = new ArrayList<File>();
-	//	count = helper.searchForFilesExt(root, Only, ".txt", 30);
-		
-        OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
-		ArrayList<Book> thebooks = filefinder.getinfo(OnlyName);	
-	    storage.SaveBooks(thebooks);
+		List<String> OnlyName;
+		List<Book> SavedBooks;
+		// ArrayList<File> Only = new ArrayList<File>();
+		// count = helper.searchForFilesExt(root, Only, ".txt", 30);
 
+		OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
+		List<Book> thebooks = filefinder.getinfo(OnlyName);
+		storage.emptyTable();
+		storage.SaveBooks(thebooks);
+		SavedBooks = storage.returnBooks();
+		storage.DeleteBooks(SavedBooks);
+
+		List<Book> BookList;
+		BookList = storage.returnBook("idBook", "1");
+		for (Book result : BookList) {
+			System.out.println(result.toString());
+		}
+		storage.close();
 		String result = null;
 
 	}
 }
-
-
-		
