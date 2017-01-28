@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.stream.Stream;
@@ -16,9 +17,10 @@ public class GuttenbergIndex {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<String> GetGuttbergIndex(String path) {	
+	public List<String> GetGuttbergIndex(String path) {	
 		// read file into stream, try-with-resources
-		ArrayList<String> Only = new ArrayList<String> ();
+		List<String> Only;
+		Only = new ArrayList();
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
 

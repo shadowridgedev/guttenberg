@@ -28,23 +28,25 @@ public class Guttenberg {
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
-		List<String> OnlyName;
-		List<Book> SavedBooks;
+	
+		
 		// ArrayList<File> Only = new ArrayList<File>();
 		// count = helper.searchForFilesExt(root, Only, ".txt", 30);
 
-		OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
+		List<String> OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
 		List<Book> thebooks = filefinder.getinfo(OnlyName);
 		storage.emptyTable();
 		storage.SaveBooks(thebooks);
-		SavedBooks = storage.returnBooks();
-		storage.DeleteBooks(SavedBooks);
+		List<Book> SavedBooks = storage.returnBooks();
 
-		List<Book> BookList;
-		BookList = storage.returnBook("idBook", "1");
+
+
+		List<Book> BookList = storage.returnBook("idBook", "1");
 		for (Book result : BookList) {
 			System.out.println(result.toString());
 		}
+//		storage.DeleteBooks(SavedBooks);
+		
 		storage.close();
 		String result = null;
 

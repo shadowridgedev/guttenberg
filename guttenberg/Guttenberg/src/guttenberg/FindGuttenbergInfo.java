@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FindGuttenbergInfo {
@@ -16,7 +17,7 @@ public class FindGuttenbergInfo {
 	}
 
 List<Book> getinfo(List<String> files) throws IOException {
-	List<Book> books = null;
+	List<Book> books = new ArrayList<Book> ();
 
 		for (String filename : files) {
 			getindexfileinfo(filename, books);
@@ -37,8 +38,7 @@ List<Book> getinfo(List<String> files) throws IOException {
 				int numsize = lastDigit(TrimLastChar(line));
 				if (numsize > 0) {
 					index = line.substring(len - (numsize + 1), len).trim();
-					// System.out.println("Book stored " + index + " line " +
-					// line);
+					System.out.println("Book stored " + index + " line " + line);
 					Book current = new Book();
 					parsebook(line.substring(0, len - (numsize + 1)), current);
 					current.EtextNumber = index;
