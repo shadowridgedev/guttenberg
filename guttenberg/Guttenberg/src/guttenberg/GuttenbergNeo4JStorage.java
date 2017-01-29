@@ -17,7 +17,7 @@ public class GuttenbergNeo4JStorage {
 	
 	GuttenbergNeo4JStorage(String DB_URL, String USER, String PASS) throws ClassNotFoundException {
 
-		Class.forName("org.neo4.driver.v1;");
+	//	Class.forName("org.neo4.driver.v1;");
 		Driver driver = GraphDatabase.driver( DB_URL, AuthTokens.basic( USER, PASS ) );
 
 	    Session Neo4Jsession = driver.session();

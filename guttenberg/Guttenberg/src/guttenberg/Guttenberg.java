@@ -22,18 +22,18 @@ public class Guttenberg {
 		HashMap<String, String> metadata = new HashMap<String, String>();
 
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
-        GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
-        GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51", 8080);
+   //     GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
+        GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51",  9042);
         
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
-        
+
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
-	
+	   File base = new File(GuttenbergPath);
 		
-		// ArrayList<File> Only = new ArrayList<File>();
-		// count = helper.searchForFilesExt(root, Only, ".txt", 30);
+		 ArrayList<File> Only = new ArrayList<File>();
+		int  count = helper.searchForFilesExt( base, Only, ".txt", 30);
 
 		List<String> OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
 		List<Book> thebooks = filefinder.getinfo(OnlyName);
