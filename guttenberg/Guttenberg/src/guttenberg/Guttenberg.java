@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.lang3.tuple.Triple;
+
 public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
@@ -20,10 +22,14 @@ public class Guttenberg {
 		String RemoveText = GuttenbergBase + "\\RemoveText\\";
 
 		HashMap<String, String> metadata = new HashMap<String, String>();
-
+		 ArrayList<Triple<String,String,String>> parseresult = new  ArrayList<Triple<String,String,String>>(); 
+	        processReverb reverb = new   processReverb();
+		reverb.tuple("John is my father", parseresult);
+		
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
    //     GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
-        GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51",  9042);
+   //     GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51",  9042);
+
         
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
 
@@ -33,7 +39,7 @@ public class Guttenberg {
 	   File base = new File(GuttenbergPath);
 		
 		 ArrayList<File> Only = new ArrayList<File>();
-		int  count = helper.searchForFilesExt( base, Only, ".txt", 30);
+/*	
 
 		List<String> OnlyName = indexer.GetGuttbergIndex(GuttenbergPath);
 		List<Book> thebooks = filefinder.getinfo(OnlyName);
@@ -48,8 +54,16 @@ public class Guttenberg {
 			System.out.println(result.toString());
 		}
 //		storage.DeleteBooks(SavedBooks);
+
 		
 		MySQLstorage.close();
+*/		
+		
+		
+		int  count = helper.searchForFilesExt( base, Only, ".txt", 30);
+		
+		
+		
 		String result = null;
 
 	}

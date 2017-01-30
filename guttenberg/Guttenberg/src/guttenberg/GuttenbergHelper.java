@@ -190,7 +190,6 @@ public class GuttenbergHelper {
 		} else if (root.isFile() && root.getName().endsWith(ext)) {
 			count++;
 			System.out.println(count + "    " + root.getName());
-
 			only.add(root);
 		}
 		return count;
