@@ -16,6 +16,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry combineaccessrules="false" kind="src" path="/book"/>
+=======
+	<classpathentry combineaccessrules="false" kind="src" path="/TamingText"/>
+>>>>>>> branch 'master' of https://github.com/shadowridgedev/guttenberg.git
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
