@@ -11,19 +11,22 @@ public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
 
-		String path = args[0];
-		String GuttenbergBase = args[1];
-		String url = "jdbc:mysql://localhost:3306/books?autoReconnect=true&useSSL=false";
-		String username = "root";
-		String password = "rs232x25";
-		String GuttenbergPath = GuttenbergBase + "\\Guttenberg\\";
-		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
-		String CleanBook = GuttenbergBase + "\\CleanBook\\";
-		String RemoveText = GuttenbergBase + "\\RemoveText\\";
 
+		String GuttenbergBase = args[0];
+		String mysqlhost = args[1];
+		String mysqlusername = args[2];
+		String mysqlpassword = args[3];
+		String datastaxhost = args[4];
+		String datastaxusername = args[5];
+		String datastaxpassword = args[6];
+		String neo4jhost = args[7];
+		String neo4jusername = args[8];
+		String neo4jpassword = args[9];
+	
+		String mysqlurl = "jdbc:mysql://"+mysqlhost+":3306/books?autoReconnect=true&useSSL=false";
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
-   //     GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
-   //     GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51",  9042);
+        GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://"+neo4jhost+":7687/",neo4jusername,neo4jpassword);
+        GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(datastaxhost, datastaxusername,datastaxpassword );
 
         
 		GuttenbergHelper helper = new GuttenbergHelper(GuttenbergBase);
@@ -31,7 +34,7 @@ public class Guttenberg {
 		GuttenbergIndex indexer = new GuttenbergIndex();
 		FindGuttenbergInfo filefinder = new FindGuttenbergInfo();
 
-	   File base = new File(GuttenbergPath);
+	   File base = new File(GuttenbergBase);
 		
 		 ArrayList<File> Only = new ArrayList<File>();
 /*	

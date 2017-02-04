@@ -7,11 +7,12 @@ import static java.lang.System.out;
 
 public class GuttenbergDataStaxStorage {
 private CassandraConnector connector;
-GuttenbergDataStaxStorage(String node, int port) {
-	
+
+public GuttenbergDataStaxStorage(String datastaxhost, String datastaxusername, String datastaxpassword) {
+	// TODO Auto-generated constructor stub
 	connector = new CassandraConnector();
 	
-	connector.connect(node, port);
+//	connector.connect(node, port);
 	
 }
 }
