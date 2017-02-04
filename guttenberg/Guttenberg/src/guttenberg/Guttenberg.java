@@ -20,13 +20,7 @@ public class Guttenberg {
 		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
 		String CleanBook = GuttenbergBase + "\\CleanBook\\";
 		String RemoveText = GuttenbergBase + "\\RemoveText\\";
-<<<<<<< HEAD
 
-
-		
-=======
-	
->>>>>>> branch 'master' of https://github.com/shadowridgedev/guttenberg.git
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
    //     GuttenbergNeo4JStorage Neo4jstorage = new  GuttenbergNeo4JStorage("bolt://localhost:7687/","Neo4j","rs232x25");
    //     GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage("esxi51",  9042);
