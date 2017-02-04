@@ -7,9 +7,15 @@ import static java.lang.System.out;
 
 public class GuttenbergDataStaxStorage {
 private CassandraConnector connector;
+String host;
+String username;
+String password;
 
 public GuttenbergDataStaxStorage(String datastaxhost, String datastaxusername, String datastaxpassword) {
 	// TODO Auto-generated constructor stub
+	host = datastaxhost;
+	username = datastaxusername;
+	password = datastaxpassword;
 	connector = new CassandraConnector();
 	
 //	connector.connect(node, port);
