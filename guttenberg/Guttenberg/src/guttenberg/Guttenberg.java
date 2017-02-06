@@ -10,7 +10,19 @@ import org.apache.commons.lang3.tuple.Triple;
 public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
+/*
+"F:/sync"
+"10.90.90.150"
+"root"
+"rs232x25"
+"10.90.90.150:
+"cloudera"
+"cloudera"
+"10.90.90.150"
+"neo4j"
+"Rs232x25"
 
+ */
 		String GuttenbergBase = args[0];
 		String mysqlhost = args[1];
 		String mysqlusername = args[2];
