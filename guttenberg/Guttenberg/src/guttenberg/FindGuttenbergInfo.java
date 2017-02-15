@@ -18,26 +18,7 @@ public class FindGuttenbergInfo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Properties getPropValues() throws IOException {
-		InputStream inputStream = null;
-		Properties prop;
-		try {
-			prop = new Properties();
-			String propFileName = "config.properties";
-
-			inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
-
-			if (inputStream != null) {
-				prop.load(inputStream);
-			} else {
-				throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
-			}
-		} finally {
-			inputStream.close();
-		}
-
-		return prop;
-	}
+	
 
 	List<Book> getinfo(List<String> files) throws IOException {
 		List<Book> books = new ArrayList<Book>();
