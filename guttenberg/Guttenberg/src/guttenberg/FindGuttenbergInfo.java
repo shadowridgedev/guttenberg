@@ -4,8 +4,10 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class FindGuttenbergInfo {
 
@@ -16,8 +18,29 @@ public class FindGuttenbergInfo {
 		// TODO Auto-generated constructor stub
 	}
 
-List<Book> getinfo(List<String> files) throws IOException {
-	List<Book> books = new ArrayList<Book> ();
+	public Properties getPropValues() throws IOException {
+		InputStream inputStream = null;
+		Properties prop;
+		try {
+			prop = new Properties();
+			String propFileName = "config.properties";
+
+			inputStream = getClass().getClassLoader().getResourceAsStream(propFileName);
+
+			if (inputStream != null) {
+				prop.load(inputStream);
+			} else {
+				throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
+			}
+		} finally {
+			inputStream.close();
+		}
+
+		return prop;
+	}
+
+	List<Book> getinfo(List<String> files) throws IOException {
+		List<Book> books = new ArrayList<Book>();
 
 		for (String filename : files) {
 			getindexfileinfo(filename, books);
@@ -89,7 +112,7 @@ List<Book> getinfo(List<String> files) throws IOException {
 			int begin = line.indexOf('[');
 			int end = line.indexOf(']');
 			if ((begin >= 0) && (begin < end) && end <= line.length())
-				return line.substring(begin, end) +"]";
+				return line.substring(begin, end) + "]";
 
 		}
 		return "";

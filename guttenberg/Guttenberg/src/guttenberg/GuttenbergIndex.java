@@ -20,7 +20,7 @@ public class GuttenbergIndex {
 	public List<String> GetGuttbergIndex(String path) {	
 		// read file into stream, try-with-resources
 		List<String> Only;
-		Only = new ArrayList();
+		Only = new ArrayList<String>();
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
 
