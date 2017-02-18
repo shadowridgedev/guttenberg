@@ -38,6 +38,12 @@
 			<artifactId>solr-core</artifactId>
 			<version>6.4.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/edu.washington.cs.knowitall/reverb-core -->
+		<dependency>
+			<groupId>edu.washington.cs.knowitall</groupId>
+			<artifactId>reverb-core</artifactId>
+			<version>1.4.0</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-analysis-extras -->
 		<dependency>
