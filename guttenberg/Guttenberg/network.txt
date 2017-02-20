@@ -16,8 +16,12 @@ Disk 418
 Disk 465
 Disk 278
 VM
-datastax3 8 24564  disk 250 400 10.90.90.213
+datastax3 8 24564  disk 250 400 10.90.90.213  
+dns works solr uploaded
+
+
 datastax4 8 24564  disk 240 440 10.90.90.141
+dns works solr uploaded
 
 10.90.90.30 far right 
 Disk 1.83
@@ -25,7 +29,9 @@ Disk 149
 Disk 465
 
 datastaxxl 8 65536 Disk 60 15635  10.90.90.233 Solr
-
+dns works solr uploaded
+datastaxsm
+dns works solr uploaded
 
 10.90.90.40
 Disk 1,8200
@@ -33,8 +39,9 @@ Disk 141
 Disk 2,730
 Disk 290
 datastax2 31964 8 Disk 250 26367
+dns works solr uploaded
 datastax6 16276 9 Disk 1662
-
+dns works solr uploaded
 10.90.90.50  bottom right and far right one NICDown
 Disk   931
 Disk   298
