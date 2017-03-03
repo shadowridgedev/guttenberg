@@ -44,6 +44,12 @@
 			<artifactId>reverb-core</artifactId>
 			<version>1.4.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>6.4.1</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-analysis-extras -->
 		<dependency>
