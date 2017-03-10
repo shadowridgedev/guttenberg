@@ -11,7 +11,7 @@ public class GettingStarted {
 		Session session;
 
 		// Connect to the cluster and keyspace "demo"
-  	cluster = Cluster.builder().addContactPoint("esxi55").build();
+  	cluster = Cluster.builder().addContactPoint("192.168.141").build();
   	session = cluster.connect("demo");
 
 		// Insert one record into the users table

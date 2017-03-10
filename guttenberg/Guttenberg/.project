@@ -3,6 +3,7 @@
 	<name>Guttenberg</name>
 	<comment></comment>
 	<projects>
+		<project>relevance-based-on-parse-trees</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

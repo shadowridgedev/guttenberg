@@ -20,7 +20,12 @@
 			<name>Jboss</name>
 			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
 		</repository>
-
+		<repository>
+			<id>net.billylieurance</id>
+			<name>BillyLieuranceNet</name>
+			<url>http://www.billylieurance.net/maven2</url>
+		</repository>
+		
 	</repositories>
 
 	<properties>
@@ -49,6 +54,12 @@
 			<groupId>org.apache.solr</groupId>
 			<artifactId>solr-solrj</artifactId>
 			<version>6.4.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.stratio.deep/deep-cassandra -->
+		<dependency>
+			<groupId>com.stratio.deep</groupId>
+			<artifactId>deep-cassandra</artifactId>
+			<version>0.8.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-analysis-extras -->
@@ -429,6 +440,20 @@
 			<version>1.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	</dependencies>
 
 	<build>
