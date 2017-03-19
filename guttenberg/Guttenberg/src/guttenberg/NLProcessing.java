@@ -1,6 +1,6 @@
 package guttenberg;
 
-import opennlp.tools.apps.contentgen.multithreaded.*;
+// import opennlp.tools.apps.contentgen.multithreaded.*;
 public class NLProcessing {
 
 }
