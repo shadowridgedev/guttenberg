@@ -44,8 +44,8 @@
 			<artifactId>mahout-core</artifactId>
 			<version>0.9</version>
 		</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->		
+
+		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
 		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-examples_2.11 -->
 
 		<!-- https://mvnrepository.com/artifact/org.apache.solr/solr-solrj -->
@@ -372,6 +372,11 @@
 			<artifactId>stanford-parser</artifactId>
 			<version>3.6.0</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/edu.stanford.nlp/stanford-parser -->
+
+
+
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>

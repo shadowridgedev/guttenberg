@@ -11,14 +11,14 @@ String host;
 String username;
 String password;
 
-public GuttenbergDataStaxStorage(String datastaxhost, String datastaxusername, String datastaxpassword) {
+public GuttenbergDataStaxStorage(String datastaxhost, String datastaxusername, String datastaxpassword, String node, int port) {
 	// TODO Auto-generated constructor stub
 	host = datastaxhost;
 	username = datastaxusername;
 	password = datastaxpassword;
 	connector = new CassandraConnector();
 	
-//	connector.connect(node, port);
+	connector.connect(node, port);
 	
 }
 }

@@ -20,12 +20,12 @@ public class Guttenberg {
 	
 
         
-//		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage(prop.getPropValues("config.properties"));
+		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
 //		GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage(prop.getPropValues("config.properties"));
 //		GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage("bolt://" + neo4jhost + ":7687/", neo4jusername, neo4jpassword);
-//		GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(prop);
-
-//	GuttenbergHelper helper = new GuttenbergHelper(prop);
+		GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(null, null, null, null, 0);
+prop.getPropValues(file)
+	GuttenbergHelper helper = new GuttenbergHelper(prop);
 
 		GuttenbergIndex indexer = new GuttenbergIndex();
 
