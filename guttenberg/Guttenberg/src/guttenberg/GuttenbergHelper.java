@@ -19,12 +19,12 @@ public class GuttenbergHelper {
 
 	// ArrayList<String> checklist = new ArrayList<String> ();
 
-	GuttenbergHelper(String GuttenbergBase) throws IOException {
+	GuttenbergHelper(GetProperties prop) throws IOException {
 
-		String GuttenbergPath = GuttenbergBase + "\\Guttenberg1\\";
-		String NotGuttenbergPath = GuttenbergBase + "\\NotGuttenberg\\";
-		String RemoveText = GuttenbergBase + "\\RemoveText\\";
-		String CleanBook = GuttenbergBase + "\\CleanBook\\";
+		String GuttenbergPath = prop + "\\Guttenberg1\\";
+		String NotGuttenbergPath = prop + "\\NotGuttenberg\\";
+		String RemoveText = prop + "\\RemoveText\\";
+		String CleanBook = prop + "\\CleanBook\\";
 		String[] paths = new File(RemoveText).list();
 		if (paths != null) {
 			for (String remove : paths) {
