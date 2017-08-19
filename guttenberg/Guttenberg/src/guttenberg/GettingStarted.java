@@ -11,8 +11,8 @@ public class GettingStarted {
 		Session session;
 
 		// Connect to the cluster and keyspace "demo"
-  	cluster = Cluster.builder().addContactPoint("192.168.141").build();
-  	session = cluster.connect("demo");
+  	cluster = Cluster.builder().addContactPoint("192.168.0.173").build();
+  	session = cluster.connect("local");
 
 		// Insert one record into the users table
 		session.execute("INSERT INTO users (lastname, age, city, email, firstname) VALUES ('Jones', 35, 'Austin', 'bob@example.com', 'Bob')");

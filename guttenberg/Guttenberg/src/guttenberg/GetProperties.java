@@ -6,9 +6,16 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class GetProperties {
-	public Properties getPropValues(String file) throws IOException {
+	public Properties getProp() {
+		return prop;
+	}
+	public void setProp(Properties prop) {
+		this.prop = prop;
+	}
+	Properties prop;
+	public  GetProperties(String file) throws IOException {
 		InputStream inputStream = null;
-		Properties prop;
+
 		try {
 			prop = new Properties();
 			String propFileName = file;
@@ -24,6 +31,6 @@ public class GetProperties {
 			inputStream.close();
 		}
 
-		return prop;
+
 	}
 }

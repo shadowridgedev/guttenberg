@@ -14,16 +14,16 @@ public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
 
-	    GetProperties prop= new GetProperties();
-	    
+	    GetProperties localprop= new GetProperties(args[0]);
+	    Properties prop = localprop.getProp();
 	    
 	
 
         
 		GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
-//		GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage(prop.getPropValues("config.properties"));
+		GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage(prop);
 //		GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage("bolt://" + neo4jhost + ":7687/", neo4jusername, neo4jpassword);
-		GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(null, null, null, null, 0);
+		GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(prop);
 //prop.getPropValues(file);
 //	GuttenbergHelper helper = new GuttenbergHelper(prop);
 

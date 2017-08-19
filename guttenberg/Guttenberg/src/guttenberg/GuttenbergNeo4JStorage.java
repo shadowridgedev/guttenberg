@@ -1,6 +1,8 @@
 package guttenberg;
 
 
+import java.util.Properties;
+
 import org.hibernate.HibernateException;
 import org.neo4j.driver.internal.spi.Connection;
 import org.neo4j.driver.v1.AuthTokens;
@@ -15,10 +17,11 @@ public class GuttenbergNeo4JStorage {
 	Statement stmt = null;
 	private Session Neo4Jsession;
 	
-	GuttenbergNeo4JStorage(String DB_URL, String USER, String PASS) throws ClassNotFoundException {
+	GuttenbergNeo4JStorage(Properties prop) throws ClassNotFoundException {
 
-	//	Class.forName("org.neo4.driver.v1;");
-		Driver driver = GraphDatabase.driver( DB_URL, AuthTokens.basic( USER, PASS ) );
+		
+		Class.forName("org.neo4.driver.v1;");
+		Driver driver = GraphDatabase.driver( prop.getProperty("Neo4JDB_URL"));
 
 	    Session Neo4Jsession = driver.session();
 	}
