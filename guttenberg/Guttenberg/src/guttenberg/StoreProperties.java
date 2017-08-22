@@ -21,7 +21,7 @@ public class StoreProperties {
 		prop.setProperty("datastaxhost","192.168.0.173");
 		prop.setProperty("datastaxusername", "cloudera");
 		prop.setProperty("datastaxpassword","cloudera");
-		prop.setProperty("Neo4JDB_URL","");
+		prop.setProperty("Neo4JDB_URL","localhost");
 		
 		// save properties to project root folder
 		prop.store(output, null);

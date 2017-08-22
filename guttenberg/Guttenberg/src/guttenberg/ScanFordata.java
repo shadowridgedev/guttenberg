@@ -12,7 +12,7 @@ public class ScanFordata {
 
 	public ArrayList<File> scan ( File root,  String path, ArrayList<File> Only,  GuttenbergHelper helper,String filetype, int depth)  {
 	// count = helper.searchForFilesExt(root, Only, filetype, depth);
-	GuttenbergIndex index = new GuttenbergIndex(path);
+	GuttenbergIndex index = new GuttenbergIndex();
     return Only;
 	}
 }

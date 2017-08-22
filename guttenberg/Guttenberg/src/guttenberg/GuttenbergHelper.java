@@ -19,7 +19,7 @@ public class GuttenbergHelper {
 
 	// ArrayList<String> checklist = new ArrayList<String> ();
 
-	GuttenbergHelper(GetProperties prop) throws IOException {
+	GuttenbergHelper(String prop) throws IOException {
 
 		String GuttenbergPath = prop + "\\Guttenberg1\\";
 		String NotGuttenbergPath = prop + "\\NotGuttenberg\\";
