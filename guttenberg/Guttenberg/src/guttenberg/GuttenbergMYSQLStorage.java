@@ -31,13 +31,13 @@ public class GuttenbergMYSQLStorage {
 		}
 	}
 
-	void StoreBooks(ArrayList<Book> books) {
-		for (Book book : books) {
+	void StoreBooks(ArrayList<Book3> books) {
+		for (Book3 book : books) {
 			InsertBook(book);
 		}
 	}
 
-	public void InsertBook(Book book) {
+	public void InsertBook(Book3 book) {
 		System.out.println("Writimg records into the table...");
 		try {
 			stmt = conn.createStatement();

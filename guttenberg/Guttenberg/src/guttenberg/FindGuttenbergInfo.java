@@ -20,8 +20,8 @@ public class FindGuttenbergInfo {
 
 	
 
-	List<Book> getinfo(List<String> files) throws IOException {
-		List<Book> books = new ArrayList<Book>();
+	List<Book3> getinfo(List<String> files) throws IOException {
+		List<Book3> books = new ArrayList<Book3>();
 
 		for (String filename : files) {
 			getindexfileinfo(filename, books);
@@ -30,7 +30,7 @@ public class FindGuttenbergInfo {
 
 	}
 
-	private List<Book> getindexfileinfo(String filename, List<Book> books) throws IOException {
+	private List<Book3> getindexfileinfo(String filename, List<Book3> books) throws IOException {
 
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		String line = null;
@@ -43,7 +43,7 @@ public class FindGuttenbergInfo {
 				if (numsize > 0) {
 					index = line.substring(len - (numsize + 1), len).trim();
 					System.out.println("Book stored " + index + " line " + line);
-					Book current = new Book();
+					Book3 current = new Book3();
 					parsebook(line.substring(0, len - (numsize + 1)), current);
 					current.EtextNumber = index;
 					current.source = "Index";
@@ -66,7 +66,7 @@ public class FindGuttenbergInfo {
 		return line;
 	}
 
-	private Book parsebook(String line, Book current) {
+	private Book3 parsebook(String line, Book3 current) {
 		String title = "";
 		String author = "";
 		boolean flag = true;

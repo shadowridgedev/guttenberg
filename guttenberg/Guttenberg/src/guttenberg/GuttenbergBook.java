@@ -13,9 +13,9 @@ public class GuttenbergBook {
 	}
 	
 
-	Book CreateGuttenbergBook(File current) throws IOException {
+	Book3 CreateGuttenbergBook(File current) throws IOException {
 		// TODO Auto-generated constructor stub
-		Book book = new Book();
+		Book3 book = new Book3();
 		book.setPath(current.getPath());
 		book.setText(new String(Files.readAllBytes(current.toPath())));
 		book.setName(current.getName());

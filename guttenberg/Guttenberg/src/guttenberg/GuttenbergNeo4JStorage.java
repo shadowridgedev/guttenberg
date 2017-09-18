@@ -26,7 +26,7 @@ public class GuttenbergNeo4JStorage {
 	    Session Neo4Jsession = driver.session();
 	}
 
-	public void InsertBook(Book book) {
+	public void InsertBook(Book3 book) {
 
 		Neo4Jsession.beginTransaction();
 
@@ -40,7 +40,7 @@ public class GuttenbergNeo4JStorage {
 	
 	
 
-	void saveBook(Book book) {
+	void saveBook(Book3 book) {
 
 		try {
 
