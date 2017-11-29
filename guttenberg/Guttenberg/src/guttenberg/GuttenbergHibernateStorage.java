@@ -1,11 +1,7 @@
 package guttenberg;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.TypedQuery;
-
-import org.hibernate.FlushMode;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -29,10 +25,10 @@ public class GuttenbergHibernateStorage {
 
 	}
 
-	void SaveBooks(List<Book3> thebooks) {
+	void SaveBooks(List<Book> thebooks) {
 		newSession = factory.openSession();
 		newSession.beginTransaction();
-		for (Book3 book : thebooks) {
+		for (Book book : thebooks) {
 			// System.out.println(book.getTitle() + " by " + book.getAuthor());
 			saveBook(book);
 		}
@@ -40,7 +36,7 @@ public class GuttenbergHibernateStorage {
 		newSession.close();
 	}
 
-	void saveBook(Book3 book) {
+	void saveBook(Book book) {
 
 		try {
 
@@ -54,12 +50,12 @@ public class GuttenbergHibernateStorage {
 
 	}
 
-	void DeleteBooks(List<Book3> savedBooks) {
+	void DeleteBooks(List<Book> savedBooks) {
 		if (newSession != null)
 			newSession.close();
 		newSession = factory.openSession();
 		newSession.beginTransaction();
-		for (Book3 book : savedBooks) {
+		for (Book book : savedBooks) {
 			System.out.println("Deleting " + book.getTitle() + " by " + book.getAuthor());
 			DeleteBook(book);
 		}
@@ -67,7 +63,7 @@ public class GuttenbergHibernateStorage {
 		newSession.close();
 	}
 
-	public static void DeleteBook(Book3 book) {
+	public static void DeleteBook(Book book) {
 
 		newSession.delete(book);
 		;
@@ -81,24 +77,24 @@ public class GuttenbergHibernateStorage {
 		factory.close();
 	}
 
-	List<Book3> returnBooks() {
+	List<Book> returnBooks() {
 		newSession = factory.openSession();
 		newSession.beginTransaction();
-		Query<Book3> q = newSession.createNativeQuery("SELECT * FROM guttenberg.book").addEntity(guttenberg.Book3.class);
-		List<Book3> result = q.getResultList();
+		Query<Book> q = newSession.createNativeQuery("SELECT * FROM guttenberg.book").addEntity(guttenberg.Book.class);
+		List<Book> result = q.getResultList();
 		newSession.getTransaction().commit();
 		newSession.close();
 		return  result;
 
 	}
 
-	List<Book3> returnBook(String field, String value) {
+	List<Book> returnBook(String field, String value) {
 		newSession = factory.openSession();
 		newSession.beginTransaction();
 		@SuppressWarnings("deprecation")
-		Query<Book3> q = newSession.createNativeQuery("SELECT * FROM guttenberg.book  where " + field + " = " + value).addEntity(guttenberg.Book3.class);
+		Query<Book> q = newSession.createNativeQuery("SELECT * FROM guttenberg.book  where " + field + " = " + value).addEntity(guttenberg.Book.class);
 		newSession.getTransaction().commit();
-		List<Book3> result = q.getResultList();
+		List<Book> result = q.getResultList();
 		newSession.close();
 		return result;
 
@@ -110,7 +106,7 @@ public class GuttenbergHibernateStorage {
 		newSession = factory.openSession();
 		String hql = String.format("delete from %s", "guttenberg.Book");
 		newSession.beginTransaction();
-		Query<Book3> query = newSession.createQuery(hql);
+		Query<Book> query = newSession.createQuery(hql);
 
 		int res = query.executeUpdate();
 		newSession.getTransaction().commit();

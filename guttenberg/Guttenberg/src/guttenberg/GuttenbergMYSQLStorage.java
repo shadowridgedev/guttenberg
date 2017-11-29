@@ -1,7 +1,9 @@
 package guttenberg;
 
-import java.io.File;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class GuttenbergMYSQLStorage {
@@ -31,13 +33,13 @@ public class GuttenbergMYSQLStorage {
 		}
 	}
 
-	void StoreBooks(ArrayList<Book3> books) {
-		for (Book3 book : books) {
+	void StoreBooks(ArrayList<Book> books) {
+		for (Book book : books) {
 			InsertBook(book);
 		}
 	}
 
-	public void InsertBook(Book3 book) {
+	public void InsertBook(Book book) {
 		System.out.println("Writimg records into the table...");
 		try {
 			stmt = conn.createStatement();

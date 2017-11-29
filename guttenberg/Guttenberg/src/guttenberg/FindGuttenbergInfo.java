@@ -1,13 +1,10 @@
 package guttenberg;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class FindGuttenbergInfo {
 
@@ -20,8 +17,8 @@ public class FindGuttenbergInfo {
 
 	
 
-	List<Book3> getinfo(List<String> files) throws IOException {
-		List<Book3> books = new ArrayList<Book3>();
+	List<Book> getinfo(List<String> files) throws IOException {
+		List<Book> books = new ArrayList<Book>();
 
 		for (String filename : files) {
 			getindexfileinfo(filename, books);
@@ -30,7 +27,7 @@ public class FindGuttenbergInfo {
 
 	}
 
-	private List<Book3> getindexfileinfo(String filename, List<Book3> books) throws IOException {
+	private List<Book> getindexfileinfo(String filename, List<Book> books) throws IOException {
 
 		BufferedReader br = new BufferedReader(new FileReader(filename));
 		String line = null;
@@ -43,7 +40,7 @@ public class FindGuttenbergInfo {
 				if (numsize > 0) {
 					index = line.substring(len - (numsize + 1), len).trim();
 					System.out.println("Book stored " + index + " line " + line);
-					Book3 current = new Book3();
+					Book current = new Book();
 					parsebook(line.substring(0, len - (numsize + 1)), current);
 					current.EtextNumber = index;
 					current.source = "Index";
@@ -66,7 +63,7 @@ public class FindGuttenbergInfo {
 		return line;
 	}
 
-	private Book3 parsebook(String line, Book3 current) {
+	private Book parsebook(String line, Book current) {
 		String title = "";
 		String author = "";
 		boolean flag = true;

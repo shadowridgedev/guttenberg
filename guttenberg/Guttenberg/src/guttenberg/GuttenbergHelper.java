@@ -152,13 +152,13 @@ public class GuttenbergHelper {
 
 	}
 
-	Book3 addMetadata(Book3 book, HashMap<String, String> items) {
+	Book addMetadata(Book book, HashMap<String, String> items) {
 		book.author = items.get("Author");
 		book.title = items.get("Title");
 		return book;
 	}
 
-	Book3 RemoveText(Book3 book) throws IOException {
+	Book RemoveText(Book book) throws IOException {
 		Path p = Paths.get(book.getPath());
 		String text = book.getText();
 		Iterator<String> itt = removetext.listIterator();

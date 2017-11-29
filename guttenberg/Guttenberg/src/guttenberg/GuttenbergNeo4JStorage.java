@@ -5,7 +5,6 @@ import java.util.Properties;
 
 import org.hibernate.HibernateException;
 import org.neo4j.driver.internal.spi.Connection;
-import org.neo4j.driver.v1.AuthTokens;
 import org.neo4j.driver.v1.Driver;
 import org.neo4j.driver.v1.GraphDatabase;
 import org.neo4j.driver.v1.Session;
@@ -26,7 +25,7 @@ public class GuttenbergNeo4JStorage {
 	    Session Neo4Jsession = driver.session();
 	}
 
-	public void InsertBook(Book3 book) {
+	public void InsertBook(Book book) {
 
 		Neo4Jsession.beginTransaction();
 
@@ -40,7 +39,7 @@ public class GuttenbergNeo4JStorage {
 	
 	
 
-	void saveBook(Book3 book) {
+	void saveBook(Book book) {
 
 		try {
 

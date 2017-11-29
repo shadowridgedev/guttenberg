@@ -1,16 +1,9 @@
 package guttenberg;
 
 import java.io.File;
-
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Date;
 
 public class Guttenberg {
 
@@ -18,7 +11,7 @@ public class Guttenberg {
 
 		GetProperties localprop = new GetProperties(args[0]);
 		Properties prop = localprop.getProp();
-        String base = prop.getProperty("root");
+		String base = prop.getProperty("root");
 		// GuttenbergHibernateStorage MySQLstorage = new
 		// GuttenbergHibernateStorage();
 		// GuttenbergNeo4JStorage Neo4jstorage = new
@@ -32,18 +25,16 @@ public class Guttenberg {
 
 		GuttenbergIndex indexer = new GuttenbergIndex();
 
-
-
 		ArrayList<File> Only = new ArrayList<File>();
 		List<String> OnlyName = indexer.GetGuttbergIndex(base);
 		List<String> Onlyfiles = indexer.getFiles(base);
-		
+
 		// List<Book> thebooks = filefinder.getinfo(OnlyName);
 		// MySQLstorage.emptyTable(); MySQLstorage.SaveBooks(thebooks);
 		// List<Book> SavedBooks = MySQLstorage.returnBooks();
 		/*
-		 * List<Book> BookList = MySQLstorage.returnBook("idBook", "1"); for
-		 * (Book result : BookList) { System.out.println(result.toString()); }
+		 * List<Book> BookList = MySQLstorage.returnBook("idBook", "1"); for (Book
+		 * result : BookList) { System.out.println(result.toString()); }
 		 * storage.DeleteBooks(SavedBooks); MySQLstorage.close();
 		 * 
 		 */

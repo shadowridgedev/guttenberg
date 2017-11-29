@@ -15,7 +15,7 @@ public class StoreProperties {
 		output = new FileOutputStream(args[0]);
 
 		// set the properties value
-		prop.setProperty("root", "C:\\\\rsync");
+		prop.setProperty("root", "G:\\gut");
 		prop.setProperty("dbuser", "root");
 		prop.setProperty("dbpassword", "rs232x25");
 		prop.setProperty("datastaxhost","192.168.0.173");

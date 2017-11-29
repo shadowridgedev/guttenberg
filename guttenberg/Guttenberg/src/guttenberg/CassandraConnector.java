@@ -1,10 +1,11 @@
 package guttenberg;
 
+import static java.lang.System.out;
+
 import com.datastax.driver.core.Cluster;
 import com.datastax.driver.core.Host;
 import com.datastax.driver.core.Metadata;
 import com.datastax.driver.core.Session;
-import static java.lang.System.out;
 
 
 /**
