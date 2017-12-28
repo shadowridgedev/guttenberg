@@ -5,14 +5,18 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 public class StoreProperties {
-  public static void main(String[] args) {
+	
+	StoreProperties () {
+		
+	}
+  public Properties resetproperties(String propfile) {
 
 	Properties prop = new Properties();
 	OutputStream output = null;
 
 	try {
 
-		output = new FileOutputStream(args[0]);
+		output = new FileOutputStream(propfile);
 
 		// set the properties value
 		prop.setProperty("root", "G:\\gut");
@@ -38,5 +42,6 @@ public class StoreProperties {
 		}
 
 	}
+	return prop;
   }
 }
