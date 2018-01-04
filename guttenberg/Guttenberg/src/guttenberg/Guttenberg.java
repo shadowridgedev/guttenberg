@@ -9,6 +9,7 @@ public class Guttenberg {
 
 	public static void main(String[] args) throws Exception {
 
+		
 		StoreProperties propstore = new StoreProperties();
 
 		Properties prop = propstore.resetproperties(args[0]);
