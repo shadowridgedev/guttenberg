@@ -15,7 +15,7 @@ public class Guttenberg {
 		Properties prop = propstore.resetproperties(args[0]);
 
 		String base = prop.getProperty("root");
-		// GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage(prop);
+		 GuttenbergHibernateStorage MySQLstorage = new GuttenbergHibernateStorage();
 		// GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage(prop);
 		// GuttenbergNeo4JStorage Neo4jstorage = new GuttenbergNeo4JStorage(prop);
 		// GuttenbergDataStaxStorage DataStaxstorage = new GuttenbergDataStaxStorage(prop);
