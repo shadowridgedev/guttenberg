@@ -9,6 +9,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.mockito.internal.verification.Only;
+
 public class GuttenbergIndex {
 
 	public GuttenbergIndex() {
