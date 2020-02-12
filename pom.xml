@@ -106,7 +106,7 @@
 		<dependency>
 			<groupId>org.apache.solr</groupId>
 			<artifactId>solr-core</artifactId>
-			<version>6.4.0</version>
+			<version>8.4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/edu.washington.cs.knowitall/reverb-core -->
 		<dependency>
@@ -148,7 +148,7 @@
 		<dependency>
 			<groupId>org.apache.solr</groupId>
 			<artifactId>solr-core</artifactId>
-			<version>6.4.0</version>
+			<version>8.4.0</version>
 		</dependency>
 
 
